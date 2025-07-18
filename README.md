@@ -20,11 +20,11 @@ Installa i pacchetti richiesti con:
 
 ```bash
 pip install torch numpy tqdm pillow
-bash```
+
 
 Nota: su macOS è necessario avere tkinter funzionante (già incluso con Python).
 Se hai problemi con Pillow, installa il pacchetto corretto con pip install Pillow.
-
+```
 
 ---
 
