@@ -1,4 +1,4 @@
-# briscola_ai/play_vs_ai.py
+
 import tkinter as tk
 from PIL import Image, ImageTk
 import torch
