@@ -37,12 +37,20 @@ class DQNAgent:
         self.loss_fn = nn.MSELoss()
 
     def act(self, state):
+        # le prime 3 posizioni dello stato rappresentano le carte in mano
+        carte_disponibili = [i for i in range(3) if state[i] != -1]
+
         if np.random.rand() < self.epsilon:
-            return random.randrange(self.action_dim)
-        state = torch.FloatTensor(state).unsqueeze(0).to(self.device)
+            return random.choice(carte_disponibili)
+
+        state_tensor = torch.FloatTensor(state / 39.0).unsqueeze(0).to(self.device)
         with torch.no_grad():
-            q_values = self.model(state)
-        return torch.argmax(q_values).item()
+            q_values = self.model(state_tensor).cpu().numpy().flatten()
+
+        # scegli la migliore solo tra quelle disponibili
+        migliori = [(i, q_values[i]) for i in carte_disponibili]
+        migliori.sort(key=lambda x: x[1], reverse=True)
+        return migliori[0][0]
 
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
