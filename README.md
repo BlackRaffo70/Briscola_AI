@@ -29,16 +29,4 @@ Se hai problemi con Pillow, installa il pacchetto corretto con pip install Pillo
 ---
 
 ## 📂 Struttura del progetto
-Briscola_AI/
-├── assets/                     # Immagini delle carte napoletane
-│   ├── bastoni_A.png
-│   ├── coppe_3.png
-│   └── retro.png
-├── briscola_env.py            # Ambiente di gioco Briscola 1v1
-├── dqn_agent.py               # Agente DQN con replay buffer e rete neurale
-├── train.py                   # Addestramento dell'agente AI
-├── play_vs_ai.py              # Interfaccia grafica per giocare contro l'AI
-├── play_vs_ai_terminal.py     # (Opzionale) versione testuale del gioco
-├── modello_dqn_finale.pt      # Modello addestrato (generato dopo training)
-└── README.md                  # Documentazione del progetto
-
+<img width="591" height="238" alt="image" src="https://github.com/user-attachments/assets/7de5e348-eb46-423e-85e7-51f82813a62c" />
